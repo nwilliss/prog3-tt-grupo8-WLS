@@ -1,0 +1,26 @@
+footer{
+    height: 8vh;
+    background-color: black;
+    margin-top: 5%;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0%;
+    padding-top: 6px;
+}
+
+.team li {
+ list-style: none;
+ padding-right: 12px;
+ color: rgb(144, 43, 43)
+}
+.footer-content{
+    list-style: none;
+ padding-right: 12px;
+ color: rgb(144, 43, 43)
+}
