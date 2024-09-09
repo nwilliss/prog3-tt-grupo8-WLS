@@ -1,6 +1,6 @@
 footer{
     height: 8vh;
-    background-color: black;
+    background-color: rgb(41, 40, 40);
     margin-top: 5%;
 }
 
@@ -17,10 +17,10 @@ footer{
 .team li {
  list-style: none;
  padding-right: 12px;
- color: rgb(144, 43, 43)
+ color: rgb(193, 193, 193);
 }
 .footer-content{
     list-style: none;
  padding-right: 12px;
- color: rgb(144, 43, 43)
+ color: rgb(193, 193, 193)
 }
