@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import "./MovieCardP.css"
+import "./MovieCard.css"
 import { Link } from "react-router-dom";
 
-class MovieCardPopulares extends Component {
+class MovieCardTop extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -30,15 +30,15 @@ mostrarDescripcion(){
 render(){
     return (
         <article>
-            <h2>{this.props.datosPelisPop.title}</h2>
-            <Link to={`/peliculas/detalle/id/${this.props.datosPelisPop.id}`}>
-            <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPelisPop.poster_path}`} alt="Cartel de películas populares" />
+            <h2>{this.props.datosPelisTop.title}</h2>
+            <Link to={`/peliculas/detalle/id/${this.props.datosPelisTop.id}`}>
+            <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPelisTop.poster_path}`} alt="Cartel de películas populares" />
             </Link>
             <div class="DescripcionCard">
             <p onClick={()=> this.mostrarDescripcion()} className="Descripcion">{this.state.textoQueSeMuestra}</p>
-            <p className={this.state.descripcionDeClase}>{this.props.datosPelisPop.overview}</p>
+            <p className={this.state.descripcionDeClase}>{this.props.datosPelisTop.overview}</p>
             
-            <Link to={`/peliculas/detalle/id/${this.props.datosPelisPop.id}`}>
+            <Link to={`/peliculas/detalle/id/${this.props.datosPelisTop.id}`}>
                 <button>Ir al detalle</button>
             </Link>
             </div>
@@ -49,4 +49,4 @@ render(){
 
 }
 
-export default MovieCardPopulares
+export default MovieCardTop

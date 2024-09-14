@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
-//css
+import "./Movie.css";
 //Aca tenemos que poner dos cards para pelis populares y otra para pelis en cartel
 import MovieCardPopulares from "../MovieCardPopulares/MovieCardPopulares";
+import MovieCardTop from "../MovieCardTop/MovieCardTop";
 
 
 let urlPelisPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=c8a7b4c53789e8169ffd16fbbfe4254f&language=en-US&page=1"
@@ -53,7 +54,7 @@ render(){
         {
             this.state.peliculasTopRated.map((oneMovieTop,idx) => <MovieCardTop key={oneMovieTop.name + idx} datosPelisTop={oneMovieTop} /> )
         }
-       <Link to="/peliculas/populares" className='ver-todas'>Ver todas las películas populares</Link>
+       <Link to="/peliculas/populares" className='ver-todas'>Ver las películas top</Link>
        </section>
        </>
 

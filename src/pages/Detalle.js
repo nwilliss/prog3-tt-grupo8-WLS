@@ -19,7 +19,7 @@ class Detalle extends Component {
         pelicula: data,
         generos: data.genres
     }
-   )). catch(error)
+   )) //catch(error)
     }
 
 render(){
