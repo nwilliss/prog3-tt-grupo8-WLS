@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Favoritos from './pages/Favoritos';
 import Detalle from './pages/Detalle'
 import VerTodas from "./pages/VerTodas";
+import Error404 from "./pages/Error404"; 
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/peliculas/populares" exact component={VerTodas} />
         <Route path="/peliculas/detalle/id/:id" component= {Detalle}/> 
         <Route path="/favoritos" exact component={Favoritos} />
+        <Route path="" component= {Error404}/>
     
       </Switch>
       <Footer />
