@@ -50,7 +50,7 @@ render(){
 
        
        <h1>Peliculas Top</h1>
-           <Link to="/peliculas/populares" className='ver-todas'>Ver las películas top</Link>
+           <Link to="/peliculas/pelisTop" className='ver-todas'>Ver las películas top</Link>
        <section>
         {
             this.state.peliculasTopRated.map((oneMovieTop,idx) => <MovieCardTop key={oneMovieTop.name + idx} datosPelisTop={oneMovieTop} /> )
