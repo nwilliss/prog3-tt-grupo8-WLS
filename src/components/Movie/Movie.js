@@ -40,22 +40,24 @@ fetch(urlPelisPopulares)
 render(){
     return (
         <>
-       <h1>Peliculas Populares</h1>
+       
+       <h1 className="titulo">Peliculas Populares</h1>
            <Link to="/peliculas/populares" className='ver-todas'>Ver todas las películas populares</Link>
-       <section>
+       <section className="peliculas-populares">
         { 
             this.state.peliculasPopulares.map((oneMovie,idx) => <MovieCardPopulares key={oneMovie.name + idx} datosPelisPop={oneMovie} /> )
         }
        </section>
 
        
-       <h1>Peliculas Top</h1>
+       <h1 className="titulo">Peliculas Top</h1>
            <Link to="/peliculas/pelisTop" className='ver-todas'>Ver las películas top</Link>
-       <section>
+       <section className="peliculas-populares">
         {
             this.state.peliculasTopRated.map((oneMovieTop,idx) => <MovieCardTop key={oneMovieTop.name + idx} datosPelisTop={oneMovieTop} /> )
         }
        </section>
+
        </>
     )
 }}

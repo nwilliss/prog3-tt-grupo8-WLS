@@ -1,0 +1,48 @@
+.cardpelicula{
+ width: 200px;
+  margin: 10px;
+  background-color: #5c5c5c;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(2, 2, 2, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.cardpelicula h2{
+    color:#ddd;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+   
+}
+.cardpelicula img{
+    
+    border-radius: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.DescripcionCard{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.cardpelicula button {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #353332;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+  .Descripción{
+    font-size: larger;
+  }
+  
+  .cardpelicula button:hover {
+    background-color: #5b1914;
+  }
+  

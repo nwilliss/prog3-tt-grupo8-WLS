@@ -1,0 +1,43 @@
+.peliculas-populares{
+    background-color:rgb(69, 69, 70);
+    border-radius: 10px;
+    /* display:flex; */
+    flex-wrap: wrap;
+    display: flex;
+    padding: 15px;
+    overflow: scroll;
+    color: white;
+    border-style: solid;
+    border-radius: 15px;
+    margin-bottom: 100px;
+    list-style: none;
+
+}
+
+.ver-todas{
+    color:rgb(225, 219, 219) ;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: 600;
+
+    
+}
+
+.titulo{
+    color:rgb(186, 182, 182) ; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: center;
+
+}
+
+/* .peliDetalle{
+    background-color: rgb(83, 83, 83);
+    border-radius: 10px;
+    border-color: black;
+    padding: 20px;
+
+} */
+

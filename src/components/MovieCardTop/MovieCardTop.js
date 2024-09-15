@@ -29,7 +29,7 @@ mostrarDescripcion(){
 
 render(){
     return (
-        <article>
+        <article className="cardpelicula">
             <h2>{this.props.datosPelisTop.title}</h2>
             <Link to={`/peliculas/detalle/id/${this.props.datosPelisTop.id}`}>
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.datosPelisTop.poster_path}`} alt="Cartel de películas populares" />

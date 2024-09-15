@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//css
 
 class Detalle extends Component {
     constructor(props){
@@ -24,9 +23,10 @@ class Detalle extends Component {
 
 render(){
     return (
-        <div>
+        <div >
+            <section className="peliDetalle">
             <h1>{this.state.pelicula.title}</h1>
-            <div>
+            <div >
             <img src={`https://image.tmdb.org/t/p/w342/${this.state.pelicula.poster_path}`} alt="Cartel de películas populares" />
             </div>
             <h4>Calificacion:{this.state.pelicula.popularity}</h4>
@@ -35,6 +35,7 @@ render(){
             <ul>
                 { this.state.generos.map((Genero, idx)=> <li key={Genero.name + idx}>{Genero.name}</li>)}
             </ul>
+            </section>
         </div>
     )
 }

@@ -64,7 +64,7 @@ class VerTodasPelisTop extends Component {
             <>
             <Form filtrarPelis={(Filtro)=> this.filtradoDePeliculas(Filtro)}/>
 
-        <section>
+        <section className="hola">
             {
                 this.state.peliculasTop2.map((oneMovie, idx) => <MovieCardTop key={oneMovie.name + idx} datosPelisTop={oneMovie} /> )
             }
