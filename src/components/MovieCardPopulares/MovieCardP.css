@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&family=Bebas+Neue&display=swap');
+
 .cardpelicula{
- width: 200px;
+ width: 300px;
   margin: 10px;
   background-color: #5c5c5c;
   border-radius: 10px;
@@ -7,42 +9,55 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   
 }
 
 .cardpelicula h2{
-    color:#ddd;
-    font-family:'Times New Roman', Times, serif;
-    text-align: center;
+  color:#ddd;
+  font-family: "Antonio", sans-serif;
+  text-align: center;
    
 }
+
 .cardpelicula img{
-    
-    border-radius: 10px;
-    border-bottom: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  border-bottom: 1px solid #ddd;
 }
 
 .DescripcionCard{
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+  text-align: center;
     
 }
 
+p{
+  color:rgb(186, 182, 182) ; 
+  margin: 20px;
+  text-align: justify;
+}
+
 .cardpelicula button {
-    margin-top: 5px;
-    padding: 5px;
-    background-color: #353332;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    
-  }
-  .Descripción{
-    font-size: larger;
-  }
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #353332;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   
-  .cardpelicula button:hover {
-    background-color: #5b1914;
-  }
+    
+}
+
+.Descripción{
+  font-size: larger;
+  color: #353332;
+  text-align: center;
+}
+  
+.cardpelicula button:hover {
+  background-color: #5b1914;
+}
+
+
   

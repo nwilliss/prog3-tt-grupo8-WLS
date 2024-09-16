@@ -1,37 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&family=Bebas+Neue&display=swap');
+
+
 .peliculas-populares{
     background-color:rgb(69, 69, 70);
-    border-radius: 10px;
+    border-radius: 50px;
     /* display:flex; */
     flex-wrap: wrap;
     display: flex;
-    padding: 15px;
+    padding: 50px;
     overflow: scroll;
     color: white;
     border-style: solid;
     border-radius: 15px;
     margin-bottom: 100px;
     list-style: none;
+    margin: 25px;
 
 }
 
 .ver-todas{
     color:rgb(225, 219, 219) ;
-    font-size: 20px;
+    font-size: 15px;
     padding: 20px;
-    font-weight: 600;
-
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    
     
 }
 
 .titulo{
+    text-align: center;
     color:rgb(186, 182, 182) ; 
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    text-align: center;
+    padding: 5px;
+    
+    margin-left: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
+    
+    
+      
 
 }
+
+h1{
+    color:rgb(225, 219, 219) ;
+    text-align: center;
+    margin-left: 30px;
+    text-transform: uppercase;
+    margin-top: 20px; 
+    margin-bottom: 5px; 
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 1px;
+    
+    
+}
+
+
 
 /* .peliDetalle{
     background-color: rgb(83, 83, 83);
