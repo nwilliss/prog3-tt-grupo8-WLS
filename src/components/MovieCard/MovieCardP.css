@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&family=Bebas+Neue&display=swap');
 
 .cardpelicula{
- width: 300px;
+  width: 235px;
   margin: 10px;
   background-color: #5c5c5c;
   border-radius: 10px;
@@ -9,8 +9,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  
 }
 
 .descripcionDeClase {
@@ -41,8 +39,9 @@
 
 .cardpelicula img{
   border-radius: 10px;
-  width: 200px;
+  width: 190px;
   border-bottom: 1px solid #ddd;
+  margin-right: 30px;
 }
 
 .DescripcionCard{
