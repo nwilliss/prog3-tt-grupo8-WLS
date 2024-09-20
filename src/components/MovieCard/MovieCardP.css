@@ -13,11 +13,30 @@
   
 }
 
+.descripcionDeClase {
+  text-align: center;
+}
+
+.ocultar {
+  display: none;
+}
+
+.overviewCard {
+  display: none
+}
+
 .cardpelicula h2{
   color:#ddd;
   font-family: "Antonio", sans-serif;
   text-align: center;
    
+}
+
+.overviewCard{
+  font-size: 20px;
+  text-align: center;
+  margin: 10px 10px;
+  display: block
 }
 
 .cardpelicula img{

@@ -10,6 +10,7 @@ const Navbar = () => {
       <ul className="nav-header">
         <Link to="/">Home</Link>
         <Link to="/favoritos">Favoritos</Link>
+    
       </ul>
     </nav>
   );
