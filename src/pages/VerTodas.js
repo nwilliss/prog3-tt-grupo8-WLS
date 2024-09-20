@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 //css
-
 //Importamos la card
-import MovieCardPopulares from "../components/MovieCardPopulares/MovieCardPopulares"
+import MovieCard from "../components/MovieCard/MovieCard"
 //Formulario de filtro
 import Form from "../components/Form/Form"
 
@@ -12,20 +11,21 @@ class VerTodas extends Component {
     constructor(props){
         super(props)
         this.state={
-            peliculasPopulares: [],
-            peliculasPopulares2: [],
-            paginaSiguiente: ""
+            peliculas: [],
+            peliculasFiltradas: [],
+            paginaSiguiente: "",
+            urlPeliculas: this.props.location.state.urlPeliculas
         }
     }
 
     componentDidMount(){
-        let urlPelisPopulares = "https://api.themoviedb.org/3/movie/popular?api_key=c8a7b4c53789e8169ffd16fbbfe4254f&language=en-US&page=1"
-        
-        fetch(urlPelisPopulares)
+       
+
+        fetch(this.state.urlPeliculas)
         .then (res => res.json())
         .then(data => this.setState({
-            peliculasPopulares: data.results,
-            peliculasPopulares2: data.results,
+            peliculas: data.results,
+            peliculasFiltradas: data.results,
             paginaSiguiente: data.page
         }))
         .catch()
@@ -34,13 +34,12 @@ class VerTodas extends Component {
     //Vamos a traernos informacion de la pagina siguiente //
 
     load(){
-        let urlLoad = `https://api.themoviedb.org/3/movie/popular?api_key=c8a7b4c53789e8169ffd16fbbfe4254f&language=en-US&page=${this.state.paginaSiguiente +1}`
-        
+        let urlLoad = `${this.state.urlPeliculas.split('&page=')[0]}&page=${this.state.paginaSiguiente + 1}`;
         fetch(urlLoad)
         .then(res => res.json())
         .then( data => this.setState({
-            peliculasPopulares: this.state.peliculasPopulares2.concat(data.results),
-            peliculasPopulares2: this.state.peliculasPopulares.concat(data.results),
+            peliculas: this.state.peliculasFiltradas.concat(data.results),
+            peliculasFiltradas: this.state.peliculas.concat(data.results),
             paginaSiguiente: data.page+1
         }))
         .catch(error => console.log(error))
@@ -50,9 +49,9 @@ class VerTodas extends Component {
     //Filtrar la pelicula que tengamos, este filtro esta ligado con el formulario//
 
     filtradoDePeliculas(Filtro){
-        let peliculasFiltradas = this.state.peliculasPopulares.filter(pelicula => pelicula.title.toLowerCase().includes(Filtro.toLowerCase()) )
+        let pelisFiltradas = this.state.peliculas.filter(pelicula => pelicula.title.toLowerCase().includes(Filtro.toLowerCase()) )
         this.setState({
-            peliculasPopulares2 : peliculasFiltradas
+            peliculasFiltradas : pelisFiltradas
         })
     }
 
@@ -65,7 +64,7 @@ class VerTodas extends Component {
 
         <section>
             {
-                this.state.peliculasPopulares2.map((oneMovie, idx) => <MovieCardPopulares key={oneMovie.name + idx} datosPelisPop={oneMovie} /> )
+                this.state.peliculasFiltradas.map((oneMovie, idx) => <MovieCard key={oneMovie.name + idx} datosPelis={oneMovie} /> )
             }
         </section>
 
