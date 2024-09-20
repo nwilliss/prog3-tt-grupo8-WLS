@@ -16,7 +16,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={ Home} />
         <Route path="/peliculas/detalle/id/:id" component= {Detalle}/> 
-        <Route path="/favoritos" exact component={Favoritos} />
+        <Route path="/favoritos" component={Favoritos} />
         <Route path="/verTodas" exact component={VerTodas} />
         <Route path="" component= {Error404}/>
     
