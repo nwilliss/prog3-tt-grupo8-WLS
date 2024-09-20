@@ -38,8 +38,12 @@ render(){
         { 
         
             this.state.peliculas.map((oneMovie,idx) => <MovieCard key={oneMovie.name + idx} datosPelis={oneMovie} /> )
+
+        
         }
        </section>
+
+    
 
 
        </>
