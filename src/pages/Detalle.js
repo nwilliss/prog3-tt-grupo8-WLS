@@ -6,7 +6,8 @@ class Detalle extends Component {
         this.state = {
             id: Number(props.match.params.id),
             generos: [],
-            pelicula: {}
+            pelicula: {},
+            favsText: "Agregar a Favoritos"
         }
     }
 
@@ -19,8 +20,52 @@ class Detalle extends Component {
         generos: data.genres
     }
    )) //catch(error)
+
+//Mismo comportamiento que hicimos en moviecard lo ponemos aca para la precarga despues del primer renderizado
+
+let favoritos = []
+const storage = localStorage.getItem('favoritos')
+
+if (storage !== null) {
+   const favsGuardados= JSON.parse(storage)
+  favoritos = favsGuardados
+}
+
+if (favoritos.includes(this.state.id))  {
+   this.setState({
+       favsText: "Quitar de Favoritos "
+   })
+}
+
     }
 
+    favoritosFunction(id){
+
+        let favoritos = []
+        let storage = localStorage.getItem("favoritos")
+    
+        if(storage !== null){
+            let favsGuardados = JSON.parse(storage)
+            favoritos = favsGuardados
+        }
+    
+        if(favoritos.includes(id)) {
+    
+            favoritos = favoritos.filter(id => id !== id)
+                this.setState({
+                    favsText: "Agregar a Favoritos"
+                })
+        } else {
+            favoritos.push(id)
+            this.setState({
+                favsText: "Quitar de Favoritos"
+            })
+        }
+    
+        let favoritosStringify = JSON.stringify(favoritos)
+        localStorage.setItem("favoritos",favoritosStringify )
+        console.log(localStorage)
+    }
 render(){
     return (
         <div >
@@ -35,6 +80,10 @@ render(){
             <ul>
                 { this.state.generos.map((Genero, idx)=> <li key={Genero.name + idx}>{Genero.name}</li>)}
             </ul>
+            <button onClick={() => this.favoritosFunction(this.state.id)} className="favoritoBoton">
+           {this.state.favsText}
+            </button>
+
             </section>
         </div>
     )
