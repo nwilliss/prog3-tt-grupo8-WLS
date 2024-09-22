@@ -13,10 +13,10 @@
 
   componentDidMount(){
       let favoritos  = []
-      let recuperoStorage = localStorage.getItem("favoritos")
+      let storage = localStorage.getItem("favoritos")
 
-      if(recuperoStorage !== null){
-        favoritos = JSON.parse(recuperoStorage)
+      if(storage !== null){
+        favoritos = JSON.parse(storage)
         let peliculas = []
 
         favoritos.forEach(unId => {
