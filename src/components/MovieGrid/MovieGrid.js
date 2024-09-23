@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import "./Movie.css";
-//Aca tenemos que poner dos cards para pelis populares y otra para pelis en cartel
+
 import MovieCard from "../MovieCard/MovieCard";
 
 
@@ -49,7 +49,7 @@ class MovieGrid extends Component {
 
 
                     }
-                </section> : <p>Loadinng....</p>  }
+                </section> : <p>Loading....</p>  }
                 
 
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchForm from '../components/SearchForm/SearchForm'
 import MovieGrid from "../components/MovieGrid/MovieGrid"
+import "../index.css"
 
 const Home = (props) => {
   return (

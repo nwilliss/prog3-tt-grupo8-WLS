@@ -1,6 +1,6 @@
  import React, {Component } from "react"
  import MovieCard from "../components/MovieCard/MovieCard"
- //css
+ import "../index.css"
 
 
  class Favoritos extends Component { 
@@ -45,8 +45,8 @@
    render(){
     return(
       <>
-      <div>{!this.state.isLoading ?<h3 className="">Estas son tus  peliculas favoritas</h3> : <p>Loading...</p>}</div>
-        <section> 
+      <div>{!this.state.isLoading ?<h3 className="Titulo">Estas son tus  peliculas favoritas</h3> : <p>Loading...</p>}</div>
+        <section className="peliFav"> 
           {
             this.state.pelis.map((unaPelicula, idx) => <MovieCard key={unaPelicula.name + idx} datosPelis ={unaPelicula} />)
           }

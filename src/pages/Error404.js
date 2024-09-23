@@ -1,5 +1,5 @@
 import React from "react";
-//css
+import "../index.css"
 
 function Error(){
     return (

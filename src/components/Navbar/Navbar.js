@@ -10,6 +10,8 @@ const Navbar = () => {
       <ul className="nav-header">
         <Link to="/">Home</Link>
         <Link to="/favoritos">Favoritos</Link>
+        <Link to="/peliculasTop"> Peliculas Top </Link>
+        <Link to="/peliculasPop"> Peliculas Populares</Link>
     
       </ul>
     </nav>

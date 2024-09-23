@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-//css
+import "../index.css"
 //Importamos la card
 import MovieCard from "../components/MovieCard/MovieCard"
 //Formulario de filtro
@@ -67,10 +67,10 @@ class VerTodas extends Component {
     render(){
         return(
             <>
-            <div>{!this.state.isLoading ? <h3 className="">Todas las peliculas</h3>: <p>Loading...</p>}</div>
+            <div>{!this.state.isLoading ? <h3 className="Titulo">Todas las peliculas</h3>: <p>Loading...</p>}</div>
             <Form filtrarPelis={(Filtro)=> this.filtradoDePeliculas(Filtro)}/>
 
-        <section>
+        <section className="peliFav">
             {
                 this.state.peliculasFiltradas.map((oneMovie, idx) => <MovieCard key={oneMovie.name + idx} datosPelis={oneMovie} /> )
             }

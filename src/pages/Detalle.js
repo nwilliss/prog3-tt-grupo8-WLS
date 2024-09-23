@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../index.css"
 
 class Detalle extends Component {
     constructor(props) {
@@ -83,7 +84,7 @@ class Detalle extends Component {
                     <section className="peliDetalle">
                     <h1>{this.state.pelicula.title}</h1>
                     <div >
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.pelicula.poster_path}`} alt="Cartel de películas populares" />
+                        <img className="detalleImg" src={`https://image.tmdb.org/t/p/w342/${this.state.pelicula.poster_path}`} alt="Cartel de películas populares" />
                     </div>
                     <h4>Calificacion:{this.state.pelicula.popularity}</h4>
                     <h4>Fecha de estreno:{this.state.pelicula.release_date}</h4>

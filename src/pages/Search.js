@@ -1,6 +1,7 @@
 import React from 'react'
 import {Component} from 'react'
 import MovieCard from '../components/MovieCard/MovieCard'
+import "../index.css"
 
 
  class SearchResults extends Component {
@@ -32,9 +33,9 @@ import MovieCard from '../components/MovieCard/MovieCard'
     render() {
         return ( 
             <>
-            <div>{!this.state.isLoading ?<h3 className="">Resultado de busqueda de: {this.props.location.state.query} </h3> : <p>Loading...</p>}</div>
+            <div>{!this.state.isLoading ?<h3 className="Titulo">Resultado de busqueda de: {this.props.location.state.query} </h3> : <p>Loading...</p>}</div>
                 {/* no sabemos si tenemos q importar el formulario searchform.js */}
-                <section>
+                <section className='peliFav'>
             {
                 this.state.peliculas.length !== 0 ?
                 this.state.peliculas.map((unaPelicula, idx)=> <MovieCard key={unaPelicula.title + idx} datosPelis ={unaPelicula}/>)
