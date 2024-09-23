@@ -14,12 +14,15 @@ class VerTodas extends Component {
             peliculas: [],
             peliculasFiltradas: [],
             paginaSiguiente: "",
-            urlPeliculas: this.props.location.state.urlPeliculas
+            urlPeliculas: this.props.location.state.urlPeliculas,
+            isLoading: true
         }
     }
 
     componentDidMount(){
-       
+        this.setState({
+            isLoading: true
+        })
 
         fetch(this.state.urlPeliculas)
         .then (res => res.json())
@@ -29,6 +32,10 @@ class VerTodas extends Component {
             paginaSiguiente: data.page
         }))
         .catch()
+
+        this.setState({
+            isLoading: false
+        })
     }
 
     //Vamos a traernos informacion de la pagina siguiente //
@@ -60,6 +67,7 @@ class VerTodas extends Component {
     render(){
         return(
             <>
+            <div>{!this.state.isLoading ? <h3 className="">Todas las peliculas</h3>: <p>Loading...</p>}</div>
             <Form filtrarPelis={(Filtro)=> this.filtradoDePeliculas(Filtro)}/>
 
         <section>

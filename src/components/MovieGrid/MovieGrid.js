@@ -10,45 +10,55 @@ class MovieGrid extends Component {
         super(props)
         this.state = {
             peliculas: [],
-            urlPeliculas: ""
+            urlPeliculas: "",
+            isLoading: true
         }
     }
 
-//Vamos a buscar la informacion de la API y la traemos con Fetch
+    //Vamos a buscar la informacion de la API y la traemos con Fetch
 
-componentDidMount() {
-    let urlPeliculas = this.props.url
-   
+    componentDidMount() {
+        this.setState({
+            isLoading: true
+        })
+        let urlPeliculas = this.props.url
 
-    //Ir a buscar la informacion de peliculas dependiendo de cual llega
-fetch(urlPeliculas)
-.then(res => res.json())
-.then(data => this.setState({
-    peliculas: data.results.slice(0,5)
-})).catch()
 
+        //Ir a buscar la informacion de peliculas dependiendo de cual llega
+        fetch(urlPeliculas)
+            .then(res => res.json())
+            .then(data => this.setState({
+                peliculas: data.results.slice(0, 5)
+            }))
+            .catch()
+            this.setState({
+                isLoading: false
+            })
+
+    }
+
+    render() {
+        return (
+            <>
+                <h1 className="titulo">{this.props.nombrePeli}</h1>
+                <Link to={{ pathname: this.props.link, state: { urlPeliculas: this.props.url } }} > Ver todas </Link>
+                {this.state.peliculas.length > 0 ? <section className="peliculas">
+                    {
+
+                        this.state.peliculas.map((oneMovie, idx) => <MovieCard key={oneMovie.name + idx} datosPelis={oneMovie} />)
+
+
+                    }
+                </section> : <p>Loadinng....</p>  }
+                
+
+
+
+
+            </>
+        )
+    }
 }
 
-render(){
-    return (
-        <>
-       <h1 className="titulo">{this.props.nombrePeli}</h1>
-       <Link to={{ pathname: this.props.link, state: { urlPeliculas: this.props.url }   }} > Ver todas </Link>
-       <section className="peliculas">
-        { 
-        
-            this.state.peliculas.map((oneMovie,idx) => <MovieCard key={oneMovie.name + idx} datosPelis={oneMovie} /> )
-
-        
-        }
-       </section>
-
-    
-
-
-       </>
-    )
-}}
-             
-export default MovieGrid; 
+export default MovieGrid;
 

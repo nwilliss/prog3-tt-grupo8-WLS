@@ -7,11 +7,15 @@
   constructor(){
     super()
     this.state = {
-      pelis : []
+      pelis : [],
+      isLoading: true
     }
   }
 
   componentDidMount(){
+      this.setState({
+        isLoading: true
+      })
       let favoritos  = []
       let storage = localStorage.getItem("favoritos")
 
@@ -28,6 +32,10 @@
               pelis: peliculas
             })
           }) .catch (error  => console.log(error))
+
+          this.setState({
+            isLoading: false
+          })
         })
 
 
@@ -37,7 +45,7 @@
    render(){
     return(
       <>
-      <h3>Estas son tus  peliculas favoritas</h3>
+      <div>{!this.state.isLoading ?<h3 className="">Estas son tus  peliculas favoritas</h3> : <p>Loading...</p>}</div>
         <section> 
           {
             this.state.pelis.map((unaPelicula, idx) => <MovieCard key={unaPelicula.name + idx} datosPelis ={unaPelicula} />)

@@ -8,24 +8,31 @@ import MovieCard from '../components/MovieCard/MovieCard'
         super(props)
         this.state = {
             peliculas : [],
+            isLoading: true
         }
     }
 
     componentDidMount() {
+        this.setState({
+            isLoading: true
+        })
        
         let query  = this.props.location.state.query
         let urlConQuery = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=c8a7b4c53789e8169ffd16fbbfe4254f&include_adult=false&language=en-US&page=1`
         fetch(urlConQuery)
         .then(response=> response.json() 
-    .then(data =>{
-        this.setState({ peliculas: data.results})
-    } )) 
+        .then(data =>{
+            this.setState({ peliculas: data.results})
+        } )) 
+        this.setState({
+            isLoading: false
+        })
     }
 
     render() {
         return ( 
             <>
-                <h2> Resultados de busqueda de {this.props.location.state.query} </h2>
+            <div>{!this.state.isLoading ?<h3 className="">Resultado de busqueda de: {this.props.location.state.query} </h3> : <p>Loading...</p>}</div>
                 {/* no sabemos si tenemos q importar el formulario searchform.js */}
                 <section>
             {
