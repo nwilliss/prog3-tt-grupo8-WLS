@@ -80,25 +80,25 @@ class Detalle extends Component {
     render() {
         return (
             <div >
-                {!this.state.isLoading ? 
+                {!this.state.isLoading ?
                     <section className="peliDetalle">
-                    <h1>{this.state.pelicula.title}</h1>
-                    <div >
-                        <img className="detalleImg" src={`https://image.tmdb.org/t/p/w342/${this.state.pelicula.poster_path}`} alt="Cartel de películas populares" />
-                    </div>
-                    <h4>Calificacion:{this.state.pelicula.popularity}</h4>
-                    <h4>Fecha de estreno:{this.state.pelicula.release_date}</h4>
-                    <h4>Duracion de la pelicula:{this.state.pelicula.runtime}</h4>
-                    <ul>
-                        {this.state.generos.map((Genero, idx) => <li key={Genero.name + idx}>{Genero.name}</li>)}
-                    </ul>
-                    <button onClick={() => this.favoritosFunction(this.state.id)} className="favoritoBoton">
-                        {this.state.favsText}
-                    </button>
+                        <h1>{this.state.pelicula.title}</h1>
+                        <div >
+                            <img className="detalleImg" src={`https://image.tmdb.org/t/p/w342/${this.state.pelicula.poster_path}`} alt="Cartel de películas populares" />
+                        </div>
+                        <h4>Calificacion:{this.state.pelicula.popularity}</h4>
+                        <h4>Fecha de estreno:{this.state.pelicula.release_date}</h4>
+                        <h4>Duracion de la pelicula:{this.state.pelicula.runtime}</h4>
+                        <ul>
+                            {this.state.generos.map((Genero, idx) => <li key={Genero.name + idx}>{Genero.name}</li>)}
+                        </ul>
+                        <button onClick={() => this.favoritosFunction(this.state.id)} className="favoritoBoton">
+                            {this.state.favsText}
+                        </button>
 
-                </section>
-                :
-                <p>Loading...</p>}
+                    </section>
+                    :
+                    <p>Loading...</p>}
             </div>
         )
     }

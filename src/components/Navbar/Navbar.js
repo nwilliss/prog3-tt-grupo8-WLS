@@ -12,7 +12,7 @@ const Navbar = () => {
         <Link to="/favoritos">Favoritos</Link>
         <Link to="/peliculasTop"> Peliculas Top </Link>
         <Link to="/peliculasPop"> Peliculas Populares</Link>
-    
+
       </ul>
     </nav>
   );

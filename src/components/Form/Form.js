@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 
-class Form extends Component  {
-    constructor(props){
+class Form extends Component {
+    constructor(props) {
         super(props)
-        this.state={
+        this.state = {
             value: ""
         }
     }
 
-    prevenirDefault(e){
+    prevenirDefault(e) {
         e.preventDefault()
     }
 
-    traerDatos(e){
+    traerDatos(e) {
         this.setState({
             value: e.target.value,
         }, () => this.props.filtrarPelis(this.state.value)
@@ -20,10 +20,10 @@ class Form extends Component  {
     }
 
 
-    render(){
-        return(
-            <form onSubmit={(e)=>this.prevenirDefault(e)}>
-                <input type="text" name="usuario" value={this.state.value} onChange={(e)=> this.traerDatos(e)}></input>
+    render() {
+        return (
+            <form onSubmit={(e) => this.prevenirDefault(e)}>
+                <input type="text" name="usuario" value={this.state.value} onChange={(e) => this.traerDatos(e)}></input>
             </form>
         )
     }

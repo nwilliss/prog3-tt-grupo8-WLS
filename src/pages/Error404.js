@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css"
 
-function Error(){
+function Error() {
     return (
         <section>
             <h3>Not Found</h3>

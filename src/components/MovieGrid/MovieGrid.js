@@ -31,9 +31,9 @@ class MovieGrid extends Component {
                 peliculas: data.results.slice(0, 5)
             }))
             .catch()
-            this.setState({
-                isLoading: false
-            })
+        this.setState({
+            isLoading: false
+        })
 
     }
 
@@ -49,8 +49,8 @@ class MovieGrid extends Component {
 
 
                     }
-                </section> : <p>Loading....</p>  }
-                
+                </section> : <p>Loading....</p>}
+
 
 
 
